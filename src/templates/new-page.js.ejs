@@ -1,16 +1,16 @@
-export default async function UserListPage() {
+export default async function <%= props.name %>NewForm() {
 
   return (
   <div className="px-8 py-12 sm:py-16 md:px-20">
-
     <h1 className="text-3xl font-semibold text-black">
-      User
+      <%= props.name %>
     </h1>
     <div className=" mt-8 lg:grid-cols-3">
       <article className="px-8 py-12 bg-black bg-opacity-5 md:px-20 md:py-24" id="features">
-        <h2 className="text-3xl font-semibold">TODO Table</h2>
+        <h2 className="text-3xl font-semibold">TODO New Form</h2>
       </article>
     </div>
+
   </div>
   );
   }

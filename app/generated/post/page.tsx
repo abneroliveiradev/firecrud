@@ -1,17 +1,15 @@
-export default function POSTPage({
-  children,
-  }: {
-  children: React.ReactNode;
-  }) {
+export default async function PostListPage() {
+
   return (
   <div className="px-8 py-12 sm:py-16 md:px-20">
+
     <h1 className="text-3xl font-semibold text-black">
-      POST
+      Post
     </h1>
     <div className=" mt-8 lg:grid-cols-3">
-      <div className="container mx-auto py-10">
-        <DataTable columns={columns} data={data} />
-      </div>
+      <article className="px-8 py-12 bg-black bg-opacity-5 md:px-20 md:py-24" id="features">
+        <h2 className="text-3xl font-semibold">TODO Table</h2>
+      </article>
     </div>
   </div>
   );

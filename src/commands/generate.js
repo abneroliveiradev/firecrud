@@ -32,10 +32,17 @@ module.exports = {
       })
 
       //Definir colunas da tabela a partir dos atributos do model name e type
-      await generate({
+      /* await generate({
         template: 'columns-table.js.ejs',
         target: `app/generated/${model.name.toLowerCase()}/components/columns.tsx`,
         props: { name: model.name.toLowerCase(), attributes: model.attributes },
+      }) */
+
+      //Forms
+      await generate({
+        template: 'edit-page.js.ejs',
+        target: `app/generated/${model.name.toLowerCase()}/edit/[...id]/.page.tsx`,
+        props: { name: model.name, attributes: model.attributes },
       })
     })
 

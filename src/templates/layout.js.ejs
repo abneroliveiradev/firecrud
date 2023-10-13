@@ -4,11 +4,11 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-title: "<%= props.name.toUpperCase() %> - FireCRUD",
+title: "<%= props.name %> - FireCRUD",
   description: "Generated from FireCRUD.",
   };
 
-  export default function <%= props.name.toUpperCase() %>Layout({
+  export default function <%= props.name %>Layout({
     children,
     }: {
     children: React.ReactNode;

@@ -4,11 +4,11 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-title: "USER - FireCRUD",
+title: "User - FireCRUD",
   description: "Generated from FireCRUD.",
   };
 
-  export default function USERLayout({
+  export default function UserLayout({
     children,
     }: {
     children: React.ReactNode;
