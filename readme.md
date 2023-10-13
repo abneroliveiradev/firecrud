@@ -1,6 +1,6 @@
 ## Firecrud CLI
 
-A CLI for creating CRUD using Nextjs + Tailwind + Shadcn + Prisma.
+A CLI to generate CRUD using Nextjs + Tailwind + ShadcnUI from a Prisma schema.
 
 ## Author
 

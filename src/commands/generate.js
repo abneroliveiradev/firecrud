@@ -10,19 +10,35 @@ module.exports = {
       print: { info },
     } = toolbox
 
-    const name = parameters.first
+    const name = parameters.first.toLowerCase()
 
     const fileName = 'schema.prisma'
     const models = getModelsBySchema(fileName)
     console.log(models)
 
-    // Create Table Page
-    await generate({
-      template: 'page.js.ejs',
-      target: `app/generated/${name}/page.tsx`,
-      props: { name },
+    models.forEach(async (model) => {
+      info(`Generating Page for ${model.name}`)
+      await generate({
+        template: 'page.js.ejs',
+        target: `app/generated/${model.name.toLowerCase()}/page.tsx`,
+        props: { name: model.name },
+      })
+
+      info(`Generating Layout for ${model.name}`)
+      await generate({
+        template: 'layout.js.ejs',
+        target: `app/generated/${model.name.toLowerCase()}/layout.tsx`,
+        props: { name: model.name },
+      })
+
+      //Definir colunas da tabela a partir dos atributos do model name e type
+      await generate({
+        template: 'columns-table.js.ejs',
+        target: `app/generated/${model.name.toLowerCase()}/components/columns.tsx`,
+        props: { name: model.name.toLowerCase(), attributes: model.attributes },
+      })
     })
 
-    info(`Generated Layout for ${name}`)
+    info(`Completed!`)
   },
 }
